@@ -37,7 +37,7 @@ public class battle {
 
     void battleComputation(){
 
-        while(hp1>0&&hp2>0){
+        while (hp1>0&&hp2>0){
 
             System.out.println("\t\t\t"+name2+" hp: "+hp2);
             System.out.println(name1+" hp: "+hp1);
@@ -45,12 +45,12 @@ public class battle {
             int movePlayer = playerTurn();
             int moveOpponent = opponentTurn();
 
-            if(hp1>0){
+            if (hp1>0){
                 System.out.println(name1 +" use "+atkmove.moveDB[movePlayer][0]+"!");
                 hp2 -= Math.floor(atkmove.movePower(movePlayer)*atk1);
             }
 
-            if(hp2>0){
+            if (hp2>0){
                 System.out.println(name2 +" used "+atkmove.moveDB[moveOpponent][0]);
                 hp1 -= Math.floor(atkmove.movePower(moveOpponent)*atk2);
             }
@@ -60,7 +60,7 @@ public class battle {
     }
 
     void battleConclusion(){
-        if(hp1>hp2){
+        if (hp1>hp2){
             System.out.println(name2+ " fainted!");
             System.out.println(name1+ " won the battle");
         }
@@ -76,15 +76,15 @@ public class battle {
         System.out.println("1."+ atkmove.moveDB[move1ID1][0]+"\t2. "+atkmove.moveDB[move2ID1][0]+"\n3. -\t4. -");
         System.out.println("======================");
 
-        while (true) {
+        while (true){
 
             System.out.print("input: ");
             int input = scan.nextInt();
 
-            if(input==1){
+            if (input==1){
                 return move1ID1;
             }
-            if(input==2){
+            if (input==2){
                 return move2ID1;
             }
 
@@ -95,10 +95,10 @@ public class battle {
     int opponentTurn(){
         int input = random.nextInt(1);
   
-        if(input==0){
+        if (input==0){
             return move1ID2;
         }
-        if(input==1){
+        if (input==1){
             return move2ID2;
         }
         return 0;
